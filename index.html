@@ -5,6 +5,8 @@
 <title>For Daniel 💌</title>
 
 <link rel="stylesheet" href="styles.css">
+
+<!-- Cursive font -->
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 
@@ -22,36 +24,33 @@
 <!-- HOME -->
 <div id="home" class="tab active">
 
-  <div class="envelope" onclick="openLetter(this)">
-    <div class="flap"></div>
-    <div class="seal">❤</div>
-    <div class="name">Daniel</div>
+  <div class="home-wrapper">
 
-    <div class="letter">
-      <div class="scroll">
-        <p>
-          Hey my love 💗<br><br>
+    <div class="envelope" onclick="openLetter(this)">
+      <div class="flap"></div>
+      <div class="seal">❤</div>
+      <div class="name">Daniel</div>
 
-          If you're reading this, I just wanted to remind you how much you mean to me.
+      <div class="letter">
+        <div class="scroll">
+          <p>
+            Hey my love 💗<br><br>
 
-          You make my world softer, calmer, and so much brighter.  
-          Even on the hard days, you're still my favorite person.
+            You make my world softer, calmer, and brighter.  
+            Even on the hard days, you're still my favorite person.
 
-          <br><br>
+            <br><br>
 
-          I hope when you open this, you feel even a small piece  
-          of how deeply I care about you.
+            Stay here a little… imagine me holding your hand.
 
-          <br><br>
+            <br><br>
 
-          Stay here a little… imagine me holding your hand.
-
-          <br><br>
-
-          I love you. Always. 💕
-        </p>
+            I love you. Always. 💕
+          </p>
+        </div>
       </div>
     </div>
+
   </div>
 
 </div>
@@ -61,6 +60,11 @@
 <div id="playlist" class="tab"><h2>Playlist 🎶</h2></div>
 <div id="pictures" class="tab"><h2>Pictures 📸</h2></div>
 <div id="ssr" class="tab"><h2>SSR 💖</h2></div>
+
+<!-- SOUND -->
+<audio id="paperSound">
+  <source src="paper-open.mp3" type="audio/mpeg">
+</audio>
 
 <script src="script.js"></script>
 
