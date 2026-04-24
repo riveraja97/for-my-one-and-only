@@ -1,0 +1,171 @@
+body {
+  background: #ffeef5;
+  font-family: 'Georgia', serif;
+  margin: 0;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+:root {
+  --nav-height: 70px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: var(--nav-height);
+  background: #ffb6c1;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 12px;
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+.navbar button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.navbar button.active {
+  background: white;
+  color: #ff4d88;
+}
+
+/* =========================
+   TABS
+========================= */
+.tab {
+  display: none;
+  margin-top: var(--nav-height);
+  text-align: center;
+}
+
+.tab.active {
+  display: block;
+}
+
+/* ONLY HOME CENTERING */
+.home-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - var(--nav-height));
+}
+
+/* =========================
+   ENVELOPE
+========================= */
+.envelope {
+  position: relative;
+  width: 280px;
+  height: 180px;
+  background: #ffc0cb;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin: 0 auto;
+}
+
+.envelope:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* =========================
+   FLAP
+========================= */
+.flap {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 140px solid transparent;
+  border-right: 140px solid transparent;
+  border-top: 90px solid #ff99aa;
+  top: 0;
+  transform-origin: top;
+  transition: transform 0.6s ease;
+  z-index: 2;
+}
+
+/* =========================
+   HEART SEAL
+========================= */
+.seal {
+  position: absolute;
+  top: 65px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  z-index: 3;
+  transition: all 0.4s ease;
+}
+
+/* =========================
+   NAME (DANIEL)
+========================= */
+.name {
+  position: absolute;
+  top: 110px;
+  width: 100%;
+  text-align: center;
+  font-family: 'Great Vibes', cursive;
+  font-size: 34px;
+  color: #b30059;
+  z-index: 1;
+}
+
+.envelope:hover .name {
+  text-shadow: 0 0 10px rgba(255, 105, 180, 0.6);
+}
+
+/* LETTER */
+.letter {
+  position: absolute;
+  width: 240px;
+  height: 180px;
+  background: white;
+  top: 20px;
+  left: 20px;
+  border-radius: 10px;
+  padding: 15px;
+  box-sizing: border-box;
+
+  transform: translateY(50px) scale(0.95);
+  opacity: 0;
+  transition: all 0.6s ease;
+
+  z-index: 1; /* starts behind */
+}
+
+/* OPEN STATE */
+
+/* Letter pops OUT and sits on top */
+.envelope.open .letter {
+  transform: translateY(-120px) scale(1.05);
+  opacity: 1;
+  z-index: 10; /* bring it above everything */
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+/* Make sure flap stays behind the letter when open */
+.envelope.open .flap {
+  transform: rotateX(180deg);
+  z-index: 2;
+}
+
+/* Heart stays out of the way */
+.envelope.open .seal {
+  transform: translateX(-50%) translateY(-40px) scale(0.7);
+  opacity: 0;
+}

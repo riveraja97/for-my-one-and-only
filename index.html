@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Daniel 💌</title>
+
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <button class="active" onclick="showTab(event, 'home')">Home</button>
+  <button onclick="showTab(event, 'letters')">Letters</button>
+  <button onclick="showTab(event, 'playlist')">Playlist</button>
+  <button onclick="showTab(event, 'pictures')">Pictures</button>
+  <button onclick="showTab(event, 'ssr')">SSR</button>
+</div>
+
+<!-- HOME -->
+<div id="home" class="tab active">
+
+  <div class="envelope" onclick="openLetter(this)">
+    <div class="flap"></div>
+    <div class="seal">❤</div>
+    <div class="name">Daniel</div>
+
+    <div class="letter">
+      <div class="scroll">
+        <p>
+          Hey my love 💗<br><br>
+
+          If you're reading this, I just wanted to remind you how much you mean to me.
+
+          You make my world softer, calmer, and so much brighter.  
+          Even on the hard days, you're still my favorite person.
+
+          <br><br>
+
+          I hope when you open this, you feel even a small piece  
+          of how deeply I care about you.
+
+          <br><br>
+
+          Stay here a little… imagine me holding your hand.
+
+          <br><br>
+
+          I love you. Always. 💕
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- OTHER TABS -->
+<div id="letters" class="tab"><h2>Letters 💌</h2></div>
+<div id="playlist" class="tab"><h2>Playlist 🎶</h2></div>
+<div id="pictures" class="tab"><h2>Pictures 📸</h2></div>
+<div id="ssr" class="tab"><h2>SSR 💖</h2></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
