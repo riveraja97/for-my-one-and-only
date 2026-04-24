@@ -76,19 +76,27 @@ function openPlaylist() {
   window.open("YOUR_SPOTIFY_PLAYLIST_LINK_HERE", "_blank");
 }
 
+
 /* =========================
-   🎧 SPOTIFY WIDGET CONTROLS
+   🎧 SPOTIFY BUTTONS → OPEN LINK
 ========================= */
+
+const SPOTIFY_LINK = "YOUR_SPOTIFY_PLAYLIST_LINK_HERE";
+
+function openSpotify() {
+  window.open(SPOTIFY_LINK, "_blank");
+}
+
 function spotifyPlay() {
-  document.getElementById("spotifyFrame").contentWindow.focus();
+  openSpotify();
 }
 
 function spotifyPause() {
-  document.getElementById("spotifyFrame").contentWindow.focus();
+  openSpotify();
 }
 
 function spotifyNext() {
-  document.getElementById("spotifyFrame").contentWindow.focus();
+  openSpotify();
 }
 
 /* 🌸 PETALS */
