@@ -201,6 +201,107 @@ body.letter-open .navbar {
   opacity: 1;
 }
 
+
+/* =========================
+   💌 LETTERS GRID
+========================= */
+.letters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  padding: 40px;
+}
+
+/* =========================
+   💌 MINI ENVELOPE
+========================= */
+.mini-envelope {
+  position: relative;
+  width: 100%;
+  height: 140px;
+  background: #ffc0cb;
+  border-radius: 8px;
+  cursor: pointer;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* hover (same vibe as main letter) */
+.mini-envelope:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(255, 77, 136, 0.25);
+}
+
+/* flap */
+.mini-flap {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 90px solid transparent;
+  border-right: 90px solid transparent;
+  border-top: 70px solid #ff99aa;
+  top: 0;
+  transform-origin: top;
+  transition: 0.6s ease;
+}
+
+/* seal */
+.mini-seal {
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* title */
+.mini-title {
+  position: absolute;
+  top: 80px;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: #b30059;
+}
+
+/* =========================
+   💌 MINI LETTER CONTENT
+========================= */
+.mini-letter {
+  position: absolute;
+  width: 85%;
+  height: 140px;
+  background: white;
+  top: 10px;
+  left: 7.5%;
+  border-radius: 8px;
+  padding: 10px;
+  box-sizing: border-box;
+
+  transform: translateY(40px);
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+/* scroll */
+.mini-scroll {
+  height: 100%;
+  overflow-y: auto;
+  font-size: 12px;
+}
+
+/* =========================
+   💌 OPEN STATE
+========================= */
+.mini-envelope.open .mini-flap {
+  transform: rotateX(180deg);
+}
+
+.mini-envelope.open .mini-letter {
+  transform: translateY(-50px);
+  opacity: 1;
+}
+
 /* =========================
    🌸 PETALS
 ========================= */
@@ -321,8 +422,8 @@ body.hide-petals .petals {
    🎥 GIF COVER
 ========================= */
 .widget-art {
-  width: 320px;
-  height: 160px;
+  width: 500px;
+  height: 272px;
   overflow: hidden;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -338,7 +439,7 @@ body.hide-petals .petals {
    🎧 SPOTIFY WIDGET
 ========================= */
 .spotify-widget {
-  width: 320px;
+  width: 500px;
   border-radius: 20px;
   overflow: hidden;
   background: rgba(255,182,193,0.25);
