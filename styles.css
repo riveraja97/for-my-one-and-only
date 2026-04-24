@@ -54,6 +54,23 @@ body.night {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
+
+/* =========================
+   🌙 RESTORED: NAVBAR FADE ON LETTER OPEN
+========================= */
+
+/* smooth transition (ensures it animates instead of snapping) */
+.navbar {
+  transition: opacity 0.4s ease, filter 0.4s ease;
+}
+
+/* when letter is opened */
+body.letter-open .navbar {
+  opacity: 0.15;
+  filter: blur(2px);
+  pointer-events: none;
+}
+
 /* =========================
    TABS
 ========================= */
