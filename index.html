@@ -22,7 +22,7 @@
   <button onclick="showTab(event, 'playlist')">Playlist</button>
   <button onclick="showTab(event, 'pictures')">Pictures</button>
   <button onclick="showTab(event, 'ssr')">SSR</button>
-  <button onclick="toggleNightMode()">Night 🌙</button>
+  <button onclick="toggleNightMode()">Night Mode🌙</button>
 </div>
 
 <!-- HOME -->
@@ -73,14 +73,21 @@
 
     <h2>Our Playlist 🎶</h2>
 
+<div class="now-playing">
+  <span>Now Playing</span>
+  <div class="dots">
+    <span></span><span></span><span></span>
+  </div>
+</div>
+
     <!-- 🎧 FAKE MINI PLAYER -->
     <div class="mini-player" onclick="openPlaylist()">
 
       <div class="album-art"></div>
 
       <div class="track-info">
-        <div class="track-title">Now Playing</div>
-        <div class="track-sub">Tap to open Spotify 💗</div>
+        <div class="track-title">For My One & Only</div>
+        <div class="track-sub">These are songs I curated for you💗</div>
       </div>
 
       <div class="play-icon">▶</div>
