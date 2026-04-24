@@ -2,10 +2,11 @@ body {
   background: #ffeef5;
   font-family: 'Georgia', serif;
   margin: 0;
+  overflow-x: hidden;
 }
 
 /* =========================
-   NAVBAR (with fade upgrade)
+   NAVBAR
 ========================= */
 :root {
   --nav-height: 70px;
@@ -26,7 +27,7 @@ body {
   transition: 0.5s ease;
 }
 
-/* NAVBAR FADE WHEN LETTER OPENS */
+/* fade + blur when letter opens */
 body.letter-open .navbar {
   opacity: 0.2;
   filter: blur(2px);
@@ -61,7 +62,7 @@ body.letter-open .navbar {
   display: block;
 }
 
-/* Home centering */
+/* Home center */
 .home-wrapper {
   display: flex;
   justify-content: center;
@@ -70,7 +71,7 @@ body.letter-open .navbar {
 }
 
 /* =========================
-   ENVELOPE + SPOTLIGHT
+   ENVELOPE
 ========================= */
 .envelope {
   position: relative;
@@ -79,11 +80,12 @@ body.letter-open .navbar {
   background: #ffc0cb;
   border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: 0.3s;
   margin: 0 auto;
+  z-index: 2;
 }
 
-/* SPOTLIGHT EFFECT */
+/* soft spotlight */
 .envelope::before {
   content: "";
   position: absolute;
@@ -117,7 +119,7 @@ body.letter-open .navbar {
   z-index: 2;
 }
 
-/* SEAL */
+/* HEART */
 .seal {
   position: absolute;
   top: 65px;
@@ -125,7 +127,7 @@ body.letter-open .navbar {
   transform: translateX(-50%);
   font-size: 24px;
   z-index: 3;
-  transition: all 0.4s ease;
+  transition: 0.4s;
 }
 
 /* NAME */
@@ -157,7 +159,7 @@ body.letter-open .navbar {
   z-index: 1;
 }
 
-/* SCROLL */
+/* scroll */
 .scroll {
   height: 100%;
   overflow-y: auto;
@@ -166,7 +168,7 @@ body.letter-open .navbar {
   line-height: 1.5;
 }
 
-/* OPEN STATE */
+/* OPEN */
 .envelope.open .flap {
   transform: rotateX(180deg);
 }
@@ -181,4 +183,43 @@ body.letter-open .navbar {
 .envelope.open .seal {
   transform: translateX(-50%) translateY(-40px) scale(0.7);
   opacity: 0;
+}
+
+/* =========================
+   🌸 FALLING PETALS
+========================= */
+.petals {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: pink;
+  border-radius: 50% 50% 50% 0;
+  opacity: 0.7;
+  animation: floatDown linear infinite;
+}
+
+/* 🌸 FALL DOWN ANIMATION */
+@keyframes floatDown {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
 }
