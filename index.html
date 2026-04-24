@@ -73,24 +73,31 @@
 
     <h2>Our Playlist 🎶</h2>
 
-<div class="now-playing">
-  <span>Now Playing</span>
-  <div class="dots">
-    <span></span><span></span><span></span>
-  </div>
-</div>
+    <!-- 🎧 SPOTIFY WIDGET -->
+    <div class="spotify-widget">
 
-    <!-- 🎧 FAKE MINI PLAYER -->
-    <div class="mini-player" onclick="openPlaylist()">
+      <!-- REAL SPOTIFY PLAYER (hidden style) -->
+      <iframe
+        id="spotifyFrame"
+        src="https://open.spotify.com/playlist/3b674w1as1RH1B42ZD69bT?si=VHVoTKPYShqho9FMxMSCwA"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+      </iframe>
 
-      <div class="album-art"></div>
+      <!-- CUSTOM UI -->
+      <div class="widget-ui">
 
-      <div class="track-info">
-        <div class="track-title">For My One & Only</div>
-        <div class="track-sub">These are songs I curated for you💗</div>
+        <div class="track-info">
+          <div class="track-title">For My One & Only</div>
+          <div class="track-sub">These are songs I curated for you💗</div>
+        </div>
+
+        <div class="controls">
+          <button onclick="spotifyPlay()">▶</button>
+          <button onclick="spotifyPause()">⏸</button>
+          <button onclick="spotifyNext()">⏭</button>
+        </div>
+
       </div>
-
-      <div class="play-icon">▶</div>
 
     </div>
 
