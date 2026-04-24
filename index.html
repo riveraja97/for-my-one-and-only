@@ -10,9 +10,10 @@
 
 <body>
 
-<!-- 🌙 STARS + 🌸 PETALS -->
+<!-- 🌙 STARS + 🌸 PETALS + 💓 HEARTS -->
 <div class="stars"></div>
 <div class="petals"></div>
+<div class="hearts"></div>
 
 <!-- NAVBAR -->
 <div class="navbar">
@@ -21,12 +22,11 @@
   <button onclick="showTab(event, 'playlist')">Playlist</button>
   <button onclick="showTab(event, 'pictures')">Pictures</button>
   <button onclick="showTab(event, 'ssr')">SSR</button>
-  <button onclick="toggleNightMode()">Night Mode🌙</button>
+  <button onclick="toggleNightMode()">Night 🌙</button>
 </div>
 
 <!-- HOME -->
 <div id="home" class="tab active">
-
   <div class="home-wrapper">
 
     <div class="envelope" onclick="openLetter(this)">
@@ -64,12 +64,35 @@
     </div>
 
   </div>
+</div>
+
+<!-- PLAYLIST TAB -->
+<div id="playlist" class="tab">
+
+  <div class="playlist-wrapper">
+
+    <h2>Our Playlist 🎶</h2>
+
+    <!-- 🎧 FAKE MINI PLAYER -->
+    <div class="mini-player" onclick="openPlaylist()">
+
+      <div class="album-art"></div>
+
+      <div class="track-info">
+        <div class="track-title">Now Playing</div>
+        <div class="track-sub">Tap to open Spotify 💗</div>
+      </div>
+
+      <div class="play-icon">▶</div>
+
+    </div>
+
+  </div>
 
 </div>
 
 <!-- OTHER TABS -->
 <div id="letters" class="tab"><h2>Letters 💌</h2></div>
-<div id="playlist" class="tab"><h2>Playlist 🎶</h2></div>
 <div id="pictures" class="tab"><h2>Pictures 📸</h2></div>
 <div id="ssr" class="tab"><h2>SSR 💖</h2></div>
 
