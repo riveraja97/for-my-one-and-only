@@ -3,10 +3,8 @@ function openLetter(envelope) {
 
   const sound = document.getElementById("paperSound");
 
-  // toggle body effect for navbar fade
   document.body.classList.toggle("letter-open");
 
-  // play sound on open only
   if (envelope.classList.contains("open")) {
     sound.currentTime = 0;
     sound.play();
@@ -27,3 +25,21 @@ function showTab(event, tabId) {
 
   event.target.classList.add("active");
 }
+
+/* =========================
+   🌸 PETALS GENERATOR
+========================= */
+function createPetal() {
+  const petal = document.createElement("div");
+  petal.classList.add("petal");
+
+  petal.style.left = Math.random() * 100 + "vw";
+  petal.style.animationDuration = (Math.random() * 5 + 5) + "s";
+  petal.style.opacity = Math.random();
+
+  document.querySelector(".petals").appendChild(petal);
+
+  setTimeout(() => petal.remove(), 10000);
+}
+
+setInterval(createPetal, 300);
