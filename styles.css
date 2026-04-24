@@ -1,8 +1,14 @@
 body {
-  background: #ffeef5;
-  font-family: 'Georgia', serif;
   margin: 0;
+  font-family: 'Georgia', serif;
+  background: #ffeef5;
   overflow-x: hidden;
+  transition: background 0.8s ease;
+}
+
+/* 🌙 NIGHT MODE */
+body.night {
+  background: #0b0f1a;
 }
 
 /* =========================
@@ -20,14 +26,14 @@ body {
   background: #ffb6c1;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 15px;
   padding: 12px;
   z-index: 100;
   box-sizing: border-box;
   transition: 0.5s ease;
 }
 
-/* fade + blur when letter opens */
+/* fade navbar when letter opens */
 body.letter-open .navbar {
   opacity: 0.2;
   filter: blur(2px);
@@ -37,7 +43,6 @@ body.letter-open .navbar {
 .navbar button {
   background: none;
   border: none;
-  font-size: 16px;
   font-weight: bold;
   color: white;
   cursor: pointer;
@@ -62,7 +67,6 @@ body.letter-open .navbar {
   display: block;
 }
 
-/* Home center */
 .home-wrapper {
   display: flex;
   justify-content: center;
@@ -80,12 +84,11 @@ body.letter-open .navbar {
   background: #ffc0cb;
   border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
   margin: 0 auto;
-  z-index: 2;
+  transition: 0.3s;
 }
 
-/* soft spotlight */
+/* glow spotlight */
 .envelope::before {
   content: "";
   position: absolute;
@@ -102,10 +105,9 @@ body.letter-open .navbar {
 
 .envelope:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
 }
 
-/* FLAP */
+/* flap */
 .flap {
   position: absolute;
   width: 0;
@@ -119,7 +121,7 @@ body.letter-open .navbar {
   z-index: 2;
 }
 
-/* HEART */
+/* seal */
 .seal {
   position: absolute;
   top: 65px;
@@ -127,10 +129,9 @@ body.letter-open .navbar {
   transform: translateX(-50%);
   font-size: 24px;
   z-index: 3;
-  transition: 0.4s;
 }
 
-/* NAME */
+/* name */
 .name {
   position: absolute;
   top: 110px;
@@ -141,7 +142,7 @@ body.letter-open .navbar {
   color: #b30059;
 }
 
-/* LETTER */
+/* letter */
 .letter {
   position: absolute;
   width: 240px;
@@ -168,7 +169,7 @@ body.letter-open .navbar {
   line-height: 1.5;
 }
 
-/* OPEN */
+/* open animation */
 .envelope.open .flap {
   transform: rotateX(180deg);
 }
@@ -186,17 +187,14 @@ body.letter-open .navbar {
 }
 
 /* =========================
-   🌸 FALLING PETALS
+   🌸 PETALS
 ========================= */
 .petals {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
   z-index: 0;
-  overflow: hidden;
 }
 
 .petal {
@@ -209,17 +207,39 @@ body.letter-open .navbar {
   animation: floatDown linear infinite;
 }
 
-/* 🌸 FALL DOWN ANIMATION */
 @keyframes floatDown {
   0% {
     transform: translateY(-10vh) rotate(0deg);
     opacity: 0;
   }
-  10% {
-    opacity: 0.8;
-  }
+  10% { opacity: 0.8; }
   100% {
     transform: translateY(100vh) rotate(360deg);
     opacity: 0;
   }
+}
+
+/* =========================
+   ✨ STARS (NIGHT ONLY)
+========================= */
+.stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
 }
