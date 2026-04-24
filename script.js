@@ -1,56 +1,36 @@
-function openLetter(envelope) {
-  envelope.classList.toggle("open");
-
-  const sound = document.getElementById("paperSound");
+function openLetter(el) {
+  el.classList.toggle("open");
   document.body.classList.toggle("letter-open");
 
-  if (envelope.classList.contains("open")) {
+  const sound = document.getElementById("paperSound");
+  if (el.classList.contains("open")) {
     sound.currentTime = 0;
     sound.play();
   }
 }
 
-/* tabs */
+/* tabs + petals control */
 function showTab(event, tabId) {
-  document.querySelectorAll(".tab").forEach(tab => {
-    tab.classList.remove("active");
-  });
-
+  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
   document.getElementById(tabId).classList.add("active");
 
-  document.querySelectorAll(".navbar button").forEach(btn => {
-    btn.classList.remove("active");
-  });
-
+  document.querySelectorAll(".navbar button").forEach(b => b.classList.remove("active"));
   event.target.classList.add("active");
+
+  if (tabId === "playlist") {
+    document.body.classList.add("hide-petals");
+  } else {
+    document.body.classList.remove("hide-petals");
+  }
 }
 
-/* =========================
-   🌙 NIGHT MODE TOGGLE
-========================= */
+/* 🌙 NIGHT MODE */
 function toggleNightMode() {
   document.body.classList.toggle("night");
 }
 
 /* =========================
-   🌸 PETALS
-========================= */
-function createPetal() {
-  const petal = document.createElement("div");
-  petal.classList.add("petal");
-
-  petal.style.left = Math.random() * 100 + "vw";
-  petal.style.animationDuration = (Math.random() * 5 + 5) + "s";
-
-  document.querySelector(".petals").appendChild(petal);
-
-  setTimeout(() => petal.remove(), 10000);
-}
-
-setInterval(createPetal, 300);
-
-/* =========================
-   ✨ STARS (only visible when toggled by CSS theme)
+   ✨ STAR CREATION (FIXED DENSITY)
 ========================= */
 function createStar() {
   const star = document.createElement("div");
@@ -59,9 +39,54 @@ function createStar() {
   star.style.left = Math.random() * 100 + "vw";
   star.style.top = Math.random() * 100 + "vh";
 
+  const size = Math.random() * 2 + 2; // slightly bigger stars
+  star.style.width = size + "px";
+  star.style.height = size + "px";
+
+  star.style.animationDuration = (Math.random() * 3 + 2) + "s";
+
   document.querySelector(".stars").appendChild(star);
 
-  setTimeout(() => star.remove(), 5000);
+  setTimeout(() => star.remove(), 6000);
 }
 
-setInterval(createStar, 200);
+/* 🌙 MORE FREQUENT STAR SPAWNING = FIX VISIBILITY */
+setInterval(createStar, 120);
+
+/* 🎧 OPEN SPOTIFY */
+function openPlaylist() {
+  window.open("YOUR_SPOTIFY_PLAYLIST_LINK_HERE", "_blank");
+}
+
+/* 🌸 PETALS */
+function createPetal() {
+  const p = document.createElement("div");
+  p.classList.add("petal");
+  p.style.left = Math.random()*100 + "vw";
+  p.style.animationDuration = (Math.random()*5+5)+"s";
+  document.querySelector(".petals").appendChild(p);
+  setTimeout(()=>p.remove(),10000);
+}
+setInterval(createPetal,300);
+
+/* ✨ HEARTS */
+function createHeart() {
+  const h = document.createElement("div");
+  h.classList.add("heart");
+
+  const colors = ["pink","red","purple","white"];
+  h.classList.add(colors[Math.floor(Math.random()*colors.length)]);
+
+  h.innerText = "❤";
+  h.style.left = Math.random()*100 + "vw";
+  h.style.animationDuration = (Math.random()*3+2)+"s";
+
+  document.querySelector(".hearts").appendChild(h);
+  setTimeout(()=>h.remove(),4000);
+}
+
+setInterval(()=>{
+  if(document.getElementById("playlist").classList.contains("active")){
+    createHeart();
+  }
+},250);
