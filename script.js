@@ -1,18 +1,26 @@
 function openLetter(envelope) {
   envelope.classList.toggle("open");
+
+  const sound = document.getElementById("paperSound");
+
+  // toggle body effect for navbar fade
+  document.body.classList.toggle("letter-open");
+
+  // play sound on open only
+  if (envelope.classList.contains("open")) {
+    sound.currentTime = 0;
+    sound.play();
+  }
 }
 
 function showTab(event, tabId) {
 
-  // hide all tabs
   document.querySelectorAll(".tab").forEach(tab => {
     tab.classList.remove("active");
   });
 
-  // show selected tab
   document.getElementById(tabId).classList.add("active");
 
-  // update active button
   document.querySelectorAll(".navbar button").forEach(btn => {
     btn.classList.remove("active");
   });
