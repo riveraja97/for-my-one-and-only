@@ -269,6 +269,76 @@ body.night .stars {
 }
 
 /* =========================
+   🎧 PLAYLIST WIDGET
+========================= */
+.playlist-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+}
+
+.playlist-wrapper h2 {
+  color: #ff2f73;
+}
+
+/* widget container */
+.spotify-widget {
+  width: 320px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255,182,193,0.25);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* iframe player */
+.spotify-widget iframe {
+  width: 100%;
+  height: 80px;
+  border: none;
+}
+
+/* UI under player */
+.widget-ui {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+}
+
+/* text */
+.track-title {
+  font-weight: bold;
+  font-size: 14px;
+  color: #ff2f73;
+}
+
+.track-sub {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* buttons */
+.controls {
+  display: flex;
+  gap: 8px;
+}
+
+.controls button {
+  background: #ff4d88;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  transform: scale(1.1);
+}
+
+/* =========================
    🎧 NOW PLAYING ANIMATION UPGRADE
 ========================= */
 .playlist-wrapper {
