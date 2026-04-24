@@ -73,7 +73,7 @@ setInterval(createStar, 120);
 
 /* 🎧 OPEN SPOTIFY */
 function openPlaylist() {
-  window.open("https://open.spotify.com/playlist/3b674w1as1RH1B42ZD69bT?si=ZhtiOk3pQo6OiPYSKRG7zAE", "_blank");
+  window.open("YOUR_SPOTIFY_PLAYLIST_LINK_HERE", "_blank");
 }
 
 
@@ -81,7 +81,7 @@ function openPlaylist() {
    🎧 SPOTIFY BUTTONS → OPEN LINK
 ========================= */
 
-const SPOTIFY_LINK = "https://open.spotify.com/playlist/3b674w1as1RH1B42ZD69bT?si=ZhtiOk3pQo6OiPYSKRG7zA";
+const SPOTIFY_LINK = "YOUR_SPOTIFY_PLAYLIST_LINK_HERE";
 
 function openSpotify() {
   window.open(SPOTIFY_LINK, "_blank");
@@ -131,3 +131,10 @@ setInterval(()=>{
     createHeart();
   }
 },250);
+
+/* =========================
+   💌 MINI LETTER OPEN
+========================= */
+function openMiniLetter(el) {
+  el.classList.toggle("open");
+}
