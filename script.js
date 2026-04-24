@@ -58,6 +58,21 @@ function openPlaylist() {
   window.open("YOUR_SPOTIFY_PLAYLIST_LINK_HERE", "_blank");
 }
 
+/* =========================
+   🎧 SPOTIFY WIDGET CONTROLS
+========================= */
+function spotifyPlay() {
+  document.getElementById("spotifyFrame").contentWindow.focus();
+}
+
+function spotifyPause() {
+  document.getElementById("spotifyFrame").contentWindow.focus();
+}
+
+function spotifyNext() {
+  document.getElementById("spotifyFrame").contentWindow.focus();
+}
+
 /* 🌸 PETALS */
 function createPetal() {
   const p = document.createElement("div");
