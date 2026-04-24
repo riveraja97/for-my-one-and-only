@@ -9,6 +9,24 @@ function openLetter(el) {
   }
 }
 
+
+/* =========================
+   💌 LETTER TOGGLE (IMPORTANT FIX)
+========================= */
+function openLetter(el) {
+  el.classList.toggle("open");
+
+  // THIS is what triggers navbar fade
+  document.body.classList.toggle("letter-open");
+
+  const sound = document.getElementById("paperSound");
+
+  if (el.classList.contains("open")) {
+    sound.currentTime = 0;
+    sound.play();
+  }
+}
+
 /* tabs + petals control */
 function showTab(event, tabId) {
   document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
