@@ -1,5 +1,3 @@
-console.log("JS LOADED");
-
 function openLetter(el) {
   el.classList.toggle("open");
   document.body.classList.toggle("letter-open");
