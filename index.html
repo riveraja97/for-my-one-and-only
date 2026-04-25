@@ -393,8 +393,47 @@
 
 <!-- 📝 BLOGS -->
 <div id="blogs" class="tab">
-  <h2 style="text-align:center;">Blogs 📝</h2>
-  <p style="text-align:center;">Your little love notes and memories 💗</p>
+
+  <div class="blog-container">
+
+    <h2 class="blog-title">Our Little Moments 💗</h2>
+
+    <!-- 📝 BLOG POST -->
+    <div class="blog-post">
+      <div class="post-date">April 24, 2026</div>
+      <h3>Our First Memory 💌</h3>
+
+      <p>
+        Today felt really special. Even the smallest moments with you feel like something I want to remember forever...
+      </p>
+
+      <img src="YOUR_IMAGE_LINK_HERE.jpg" class="post-img">
+    </div>
+
+    <!-- 📝 BLOG POST -->
+    <div class="blog-post">
+      <div class="post-date">April 20, 2026</div>
+      <h3>A Random Thought About You</h3>
+
+      <p>
+        I caught myself smiling for no reason today… then I realized it was because I was thinking about you.
+      </p>
+    </div>
+
+    <!-- 📝 BLOG POST -->
+    <div class="blog-post">
+      <div class="post-date">April 15, 2026</div>
+      <h3>Late Night Thoughts 🌙</h3>
+
+      <p>
+        I wish you were here so I could just lay next to you and talk about everything and nothing at the same time.
+      </p>
+
+      <img src="YOUR_IMAGE_LINK_HERE_2.jpg" class="post-img">
+    </div>
+
+  </div>
+
 </div>
 
 <!-- 🍓 SNACK -->
@@ -413,9 +452,9 @@
       Click below for a joke 💗
     </div>
 
-    <button class="joke-btn" onclick="generateJoke()">
-      Joke
-    </button>
+    <button class="joke-btn" id="jokeBtn">
+  Tell me a joke
+</button>
 
   </div>
 </div>
@@ -426,10 +465,63 @@
   <p style="text-align:center;">Hear my voice recordings 💗</p>
 </div>
 
-<!-- 📅 CALENDAR TAB -->
+<!-- CALENDAR TAB -->
 <div id="calendar" class="tab">
-  <h2 style="text-align:center;">Calendar 📅</h2>
-  <p style="text-align:center;">Important dates & memories 💗</p>
+
+  <div class="calendar-wrapper">
+
+    <h2>Our Dates 📅</h2>
+
+    <!-- 📅 CALENDAR GRID -->
+    <div class="calendar-grid">
+
+      <div class="calendar-header">
+        <button onclick="changeMonth(-1)">‹</button>
+        <span id="calendarTitle"></span>
+        <button onclick="changeMonth(1)">›</button>
+      </div>
+
+      <div class="calendar-days">
+        <div>Sun</div><div>Mon</div><div>Tue</div>
+        <div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+      </div>
+
+      <div class="calendar-dates" id="calendarDates"></div>
+
+    </div>
+
+    <!-- 💌 EVENT DISPLAY -->
+    <div class="date-popup" id="datePopup">
+      Click a special date 💗
+    </div>
+
+    <!-- 💗 ADD TO PHONE EVENTS -->
+    <div class="date-card">
+      <div>
+        <h3>Our Anniversary 💌</h3>
+        <p>May 10, 2026</p>
+      </div>
+      <button onclick="addToCalendar('Our Anniversary 💌','2026-5-10')">Add 💗</button>
+    </div>
+
+    <div class="date-card">
+      <div>
+        <h3>First Date 🌸</h3>
+        <p>April 20, 2026</p>
+      </div>
+      <button onclick="addToCalendar('First Date 🌸','2026-4-20')">Add 💗</button>
+    </div>
+
+    <div class="date-card">
+      <div>
+        <h3>Movie Night 🎬</h3>
+        <p>April 25, 2026</p>
+      </div>
+      <button onclick="addToCalendar('Movie Night 🎬','2026-4-25')">Add 💗</button>
+    </div>
+
+  </div>
+
 </div>
 
 <script src="script.js"></script>

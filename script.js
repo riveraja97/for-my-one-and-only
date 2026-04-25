@@ -170,3 +170,98 @@ function generateJoke() {
   const randomIndex = Math.floor(Math.random() * jokes.length);
   document.getElementById("jokeBox").innerText = jokes[randomIndex];
 }
+
+
+/* =========================
+   📅 AUTO CALENDAR SYSTEM
+========================= */
+
+let currentDate = new Date();
+
+/* 💗 SPECIAL DATES */
+const specialDates = {
+  "2026-4-20": "First Date 🌸",
+  "2026-4-25": "Movie Night 🎬",
+  "2026-5-10": "Anniversary 💌"
+};
+
+/* render calendar */
+function renderCalendar() {
+  const calendarDates = document.getElementById("calendarDates");
+  const calendarTitle = document.getElementById("calendarTitle");
+
+  if (!calendarDates || !calendarTitle) return;
+
+  calendarDates.innerHTML = "";
+
+  const year = currentDate.getFullYear();
+  const month = currentDate.getMonth();
+
+  const today = new Date();
+  const isSameMonth =
+    today.getFullYear() === year &&
+    today.getMonth() === month;
+
+  const firstDay = new Date(year, month, 1).getDay();
+  const totalDays = new Date(year, month + 1, 0).getDate();
+
+  const monthNames = [
+    "January","February","March","April","May","June",
+    "July","August","September","October","November","December"
+  ];
+
+  calendarTitle.innerText = `${monthNames[month]} ${year} 💗`;
+
+  /* empty slots */
+  for (let i = 0; i < firstDay; i++) {
+    calendarDates.innerHTML += "<div></div>";
+  }
+
+  /* days */
+  for (let day = 1; day <= totalDays; day++) {
+
+    const key = `${year}-${month+1}-${day}`;
+
+    let className = "date";
+
+    if (specialDates[key]) {
+      className += " special";
+    }
+
+    if (isSameMonth && day === today.getDate()) {
+      className += " today";
+    }
+
+    if (specialDates[key]) {
+      calendarDates.innerHTML += `
+        <div class="${className}" onclick="showDateEvent('${specialDates[key]}')">
+          ${day}
+        </div>
+      `;
+    } else {
+      calendarDates.innerHTML += `
+        <div class="${className}">
+          ${day}
+        </div>
+      `;
+    }
+  }
+}
+
+/* month switch */
+function changeMonth(direction) {
+  currentDate = new Date(
+    currentDate.getFullYear(),
+    currentDate.getMonth() + direction,
+    1
+  );
+  renderCalendar();
+}
+
+/* show event */
+function showDateEvent(text) {
+  document.getElementById("datePopup").innerText = text + " 💗";
+}
+
+/* init */
+document.addEventListener("DOMContentLoaded", renderCalendar);
