@@ -138,3 +138,35 @@ setInterval(()=>{
 function openMiniLetter(el) {
   el.classList.toggle("open");
 }
+
+
+/* =========================
+   😂 JOKE GENERATOR
+========================= */
+
+const jokes = [
+  "Why did the scarecrow win an award? Because he was outstanding in his field 😂",
+  "I told my girlfriend she drew her eyebrows too high… she looked surprised 💀",
+  "Why don’t skeletons fight each other? They don’t have the guts 😭",
+  "I only know 25 letters of the alphabet… I don’t know y 🤔",
+  "Why did the math book look sad? It had too many problems 💔",
+  "What do you call fake spaghetti? An impasta 🍝",
+  "Why did the computer go to therapy? It had too many bytes of trauma 💻",
+  "I’m reading a book about anti-gravity… it’s impossible to put down 😌",
+  "Why did the coffee file a police report? It got mugged ☕",
+  "Why don’t eggs tell jokes? They’d crack up 🥚😂",
+  "I tried to catch fog yesterday… Mist 🤡",
+  "Why did the student eat his homework? The teacher said it was a piece of cake 🍰",
+  "Why don’t programmers like nature? Too many bugs 🐛",
+  "I used to play piano by ear… now I use my hands 🎹",
+  "Why did the banana go to the doctor? It wasn’t peeling well 🍌",
+  "What do you call a bear with no teeth? A gummy bear 🐻",
+  "Why was 6 afraid of 7? Because 7 8 9 😂",
+  "Why did the phone break up with the charger? It needed space 📱",
+  "Why did the golfer bring two pairs of pants? In case he got a hole in one ⛳"
+];
+
+function generateJoke() {
+  const randomIndex = Math.floor(Math.random() * jokes.length);
+  document.getElementById("jokeBox").innerText = jokes[randomIndex];
+}
